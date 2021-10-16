@@ -1,3 +1,10 @@
+////DOM Logic ////
+
+const body = document.querySelector("body");
+const winnerText = document.createElement("h1");
+body.appendChild(winnerText);
+
+/// Game Logic ////
 const choices = ["rock", "paper", "scissors"];
 
 //rock = 0
@@ -12,6 +19,7 @@ function computerPlay() {
 }
 
 function playRound(playerSelection, computerSelection) {
+  console.clear();
   console.log(playerSelection, computerSelection);
   //if both pick the same index, tie
   if (playerSelection === computerSelection) {
@@ -43,18 +51,21 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game() {
-  for (i = 1; i <= 5; i++) {
-    let playerSelection = choices.indexOf(
-      prompt("Please enter rock, paper, or scissors").toLowerCase()
-    );
-    const computerSelection = computerPlay();
-    playRound(playerSelection, computerSelection);
-  }
-  console.log(
-    `The final score is...\n Player: ${playerScore}\nComputer: ${computerScore}`
-  );
-  computerScore = 0;
+function resetGame() {
   playerScore = 0;
+  computerScore = 0;
+  return;
 }
-game();
+
+const gameButtons = document.querySelectorAll(".btn");
+
+gameButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (computerScore === 5 || playerScore === 5) {
+      winnerText.innerText = `----GAME OVER----\n Player Score: ${playerScore}\n Computer Score: ${computerScore}`;
+      resetGame();
+    } else {
+      playRound(Number(button.id), (computerSelection = computerPlay()));
+    }
+  });
+});

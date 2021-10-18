@@ -192,3 +192,53 @@ body {
 .results button:hover {
   transform: translate3d(0px, -2px, 0px);
 }
+
+@media (max-width: 700px) {
+  .scoreboard {
+    width: 300px;
+  }
+  .scoreboard img {
+    width: 100px;
+  }
+  .score {
+    width: 80px;
+    height: 100px;
+  }
+
+  .hands {
+    width: 276px;
+    height: 230px;
+    background-image: url("/assets/triangle.png");
+    background-size: 200px;
+  }
+
+  .contest {
+    width: 276px;
+  }
+
+  .contest img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .hands img {
+    width: 100px;
+  }
+  .newRound {
+    padding: 3px 9px;
+  }
+
+  .results {
+    width: 276px;
+    justify-content: center;
+    padding: 12px 24px;
+  }
+
+  .results h1 {
+    font-size: 16px;
+  }
+
+  .referee h1 {
+    font-size: 20px;
+  }
+}

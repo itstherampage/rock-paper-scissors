@@ -13,6 +13,11 @@ const beginGameText = document.querySelector(".beginGame");
 const resultsContainer = document.createElement("div");
 const playAgainText = document.createElement("h1");
 const playAgainButton = document.createElement("button");
+const anotherRoundButton = document.querySelector(".referee").lastElementChild;
+
+if (window.innerWidth < 700) {
+  anotherRoundButton.innerText = "Again?";
+}
 
 const handOptions = {
   0: "./assets/Rock.png",

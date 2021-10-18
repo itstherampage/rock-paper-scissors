@@ -10,7 +10,9 @@ const hands = document.querySelector(".hands");
 
 const beginGameText = document.querySelector(".beginGame");
 
-const results = document.createElement("div");
+const resultsContainer = document.createElement("div");
+const playAgainText = document.createElement("h1");
+const playAgainButton = document.createElement("button");
 
 const handOptions = {
   0: "./assets/Rock.png",
@@ -67,16 +69,35 @@ const newRound = () => {
   hands.style.display = "flex";
 };
 
+const resetScoreCounter = () => {
+  playerScoreText.innerText = "0";
+  computerScoreText.innerText = "0";
+};
+
 const declareWinner = () => {
   hands.style.display = "none";
   contest.style.display = "none";
-  hands.remove();
-  contest.remove();
-  beginGameText.remove();
   wrapper.style.justifyContent = "center";
-  if ((playerScore = 5)) {
-  } else if ((computerScore = 5)) {
+  wrapper.appendChild(resultsContainer);
+  resultsContainer.appendChild(playAgainText);
+  resultsContainer.appendChild(playAgainButton);
+  resultsContainer.classList.add("results");
+  if (playerScore === 5) {
+    resultsContainer.firstElementChild.innerText =
+      "You won! Want to play again?";
+    resultsContainer.lastElementChild.innerText = "Play again!";
+  } else if (computerScore === 5) {
+    resultsContainer.firstElementChild.innerText =
+      "You lost! Want to play again?";
+    resultsContainer.lastElementChild.innerText = "Play again!";
   }
+  playAgainButton.onclick = function () {
+    playerScore = 0;
+    computerScore = 0;
+    hands.style.display = "flex";
+    resultsContainer.remove();
+    resetScoreCounter();
+  };
 };
 
 const referee = (playerSelection, computerSelection) => {

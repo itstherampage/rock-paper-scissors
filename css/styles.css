@@ -103,10 +103,6 @@ body {
   height: 275px;
 }
 
-.contest > div {
-  flex: 1;
-}
-
 .contest h1 {
   color: white;
   font-size: 20px;
@@ -216,8 +212,8 @@ body {
   }
 
   .contest img {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
   }
 
   .hands img {

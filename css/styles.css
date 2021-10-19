@@ -70,7 +70,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   margin-top: 100px;
-  background-image: url("/assets/triangle.png");
+  background-image: url("../assets/triangle.png");
   background-repeat: no-repeat;
   background-position: center;
 }

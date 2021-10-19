@@ -208,7 +208,6 @@ body {
   .hands {
     width: 276px;
     height: 230px;
-    background-image: url("/assets/triangle.png");
     background-size: 200px;
   }
 

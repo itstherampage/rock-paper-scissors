@@ -34,7 +34,6 @@ const pickUserHand = (hand) => {
   if (window.innerWidth < 700) {
     anotherRoundButton.innerText = "Again?";
   }
-
   hands.style.display = "none";
 
   contest.style.display = "flex";
@@ -101,6 +100,7 @@ const declareWinner = () => {
     computerScore = 0;
     hands.style.display = "flex";
     resultsContainer.remove();
+    wrapper.style.justifyContent = "unset";
     resetScoreCounter();
   };
 };
